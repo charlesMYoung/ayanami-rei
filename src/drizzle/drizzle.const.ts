@@ -1,0 +1,2 @@
+export const DRIZZLE_CONNECTION = Symbol('DRIZZLE_CONNECTION');
+export const DRIZZLE_OPTIONS = Symbol('DRIZZLE_OPTIONS');
