@@ -1,5 +1,5 @@
 import { Provider } from '@nestjs/common';
-import * as postgres from 'postgres';
+import { Pool } from 'pg';
 import {
   DrizzleModuleAsyncOptions,
   DrizzleModuleOptions,
@@ -13,7 +13,9 @@ export function createDrizzleAsyncProviders(
     {
       provide: DRIZZLE_CONNECTION,
       useFactory: (drizzleOptions: DrizzleModuleOptions) => {
-        return postgres(drizzleOptions.databaseUrl);
+        return new Pool({
+          connectionString: drizzleOptions.databaseUrl,
+        });
       },
       inject: [DRIZZLE_OPTIONS],
     },

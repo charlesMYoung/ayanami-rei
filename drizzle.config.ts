@@ -6,5 +6,5 @@ export default {
   dbCredentials: {
     url: process.env.DATABASE_URL,
   },
-  tablesFilter: ['guide_*'],
+  tablesFilter: ['ayanami__*'],
 } satisfies Config;
